@@ -108,7 +108,7 @@
       const addToTheSecond = function (content5) {
         // create an empty list item
         // newLi is <li></li>
-        let newLi = dcument.createElement("li");
+        let newLi = document.createElement("li");
 
         // add the text content to it
         newLi.innerText = content5;
@@ -142,7 +142,7 @@
       */
 
       const firstUlDisappear = function () {
-        document.querySelector("#firstlist").style.display = "none";
+        document.querySelector("#firstlist").remove();
       };
       firstUlDisappear();
 
@@ -179,9 +179,11 @@
 
       const changeFooterText = function () {
         //grabbing footer p and changing it
-        document.querySelector("footer p").innerText =
-          "This is the solved exercise 10";
+        let newPf = document.querySelector("footer p");
+        newPf.innerText = "This is the solved exercise 10";
+        document.querySelector("footer p").addEventListener("click", newPf);
       };
+      changeFooterText();
 
       /* EXERCISE 11
       Attach an event listener to the input field in the page for console logging its value just after any keystroke.
